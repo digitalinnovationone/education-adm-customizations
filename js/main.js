@@ -44,6 +44,7 @@
         button.addEventListener('click', () => {
             menu.classList.toggle('open');
         });
+        return button;
     })();
 
     menu.appendChild(actionsContent);
