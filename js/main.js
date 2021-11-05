@@ -70,7 +70,7 @@
     }
 
     window.EducationCustomizations.copy = async function (text) {
-        window.focus();
+        window.document.focus();
         await window.navigator.clipboard.writeText(text);
     }
 
