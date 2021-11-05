@@ -69,7 +69,11 @@
     }
 
     window.EducationCustomizations.copy = async function (text) {
-        window.document.focus();
+        // https://stackoverflow.com/a/6976583/3072570
+        window.focus();
+        if (document.activeElement) {
+            document.activeElement.blur();
+        }
         await window.navigator.clipboard.writeText(text);
     }
 
