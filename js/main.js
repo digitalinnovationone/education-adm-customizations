@@ -1,4 +1,3 @@
-
 (function render() {
     (function addStyle() {
         const custonStyle = document.createElement('link');
