@@ -16,7 +16,7 @@
         const id = window.location.pathname.split('/')[3];
         const editorial = '';
         const name = document.querySelector('#id_name').value;
-        const tecnology = document.querySelector('#id_coursehasskills_set-0-skill > option:selected').innerText;
+        const tecnology = document.querySelector('#id_coursehasskills_set-0-skill > option[selected]').innerText;
         const duration = document.querySelector('#id_workload').value;
         const author = document.querySelector('#id_author_on_deck > div > span.tag').innerText;
         const gender = '';
