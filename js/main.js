@@ -68,4 +68,10 @@
         actionButton.addEventListener('click', listener);
         actionsContent.appendChild(actionButton);
     }
+
+    window.EducationCustomizations.copy = async function (text) {
+        window.focus();
+        await window.navigator.clipboard.writeText(text);
+    }
+
 })();

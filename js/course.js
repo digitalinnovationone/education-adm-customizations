@@ -9,7 +9,7 @@
 
     window.EducationCustomizations.createAction('Copiar Link DIO.ME', async () => {
         const courseDioMeUrl = getCourseDioMeUrl();
-        await navigator.clipboard.writeText(courseDioMeUrl);
+        await window.EducationCustomizations.copy(courseDioMeUrl);
     });
 
     window.EducationCustomizations.createAction('Copiar CSV Base de Treinamentos', async () => {
@@ -22,9 +22,9 @@
         const gender = '';
         const stack = '';
         const linkDioMe = getCourseDioMeUrl();
-        const LinkAdmin = window.location.href;
-        const courseCsv = `${id},${editorial},${name},${tecnology},${duration},${author},${gender},${stack},${linkDioMe},${LinkAdmin}`;
-        await navigator.clipboard.writeText(courseCsv);
+        const linkAdmin = window.location.href;
+        const courseCsv = `${id},${editorial},${name},${tecnology},${duration},${author},${gender},${stack},${linkDioMe},${linkAdmin}`;
+        await window.EducationCustomizations.copy(courseCsv);
     });
 
 })();
