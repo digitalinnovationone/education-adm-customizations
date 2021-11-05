@@ -1,0 +1,25 @@
+.custom-education-adm-menu {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #0d47a1;
+    border-radius: 0.5rem;
+    padding: .5rem;
+}
+
+.custom-education-adm-menu button {
+    margin: .25rem;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #0d47a1;
+    color: #fff;
+}
+
+.custom-education-adm-menu button:hover {
+    cursor: pointer !important;
+    text-decoration: underline;
+}
