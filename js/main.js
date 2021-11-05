@@ -8,39 +8,47 @@
         head.appendChild(custonStyle);
     })();
 
-    (function addMenu() {
-        const menu = document.createElement('div');
-        menu.className = 'custom-education-adm-menu';
+    const [body] = document.getElementsByTagName('body');
 
-        const actionsContent = document.createElement('div');
-        actionsContent.className = 'actions';
-        
-        const closeButton = document.createElement('button');
-        closeButton.type = 'button';
-        closeButton.className = 'close';
-        closeButton.innerText = 'x';
+    const menu = (() => {
+        const div = document.createElement('div');
+        div.className = 'custom-education-adm-menu';
+        return div;
+    })();
 
-        closeButton.addEventListener('click', () => {
-            const [menu] = document.getElementsByClassName('custom-education-adm-menu');
+    const closeButton = (() => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'close';
+        button.innerText = 'x';
+
+        button.addEventListener('click', () => {
             menu.classList.toggle('open');
         });
 
-        actionsContent.appendChild(closeButton);
-
-        menu.appendChild(actionsContent);
-
-        const floatingButton = document.createElement('button');
-        floatingButton.type = 'button';
-        floatingButton.className = 'custom-education-floating-adm-menu-button';
-        floatingButton.innerText = '+';
-        floatingButton.addEventListener('click', () => {
-            content.classList.toggle('open')
-        });
-
-        const [body] = document.getElementsByTagName('body');
-        body.appendChild(menu);
-        body.appendChild(floatingButton);
+        return button;
     })();
+
+    const actionsContent = (() => {
+        const div = document.createElement('div');
+        div.className = 'actions';
+        div.appendChild(closeButton);
+        return div;
+    })();
+
+    const floatingButton = (() => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'custom-education-floating-adm-menu-button';
+        button.innerText = '+';
+        button.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+    })();
+
+    menu.appendChild(actionsContent);
+    body.appendChild(menu);
+    body.appendChild(floatingButton);
 
     window.EducationCustomizations = {};
 
@@ -51,12 +59,12 @@
         body.appendChild(script);
     };
 
-    window.EducationCustomizations.createAction = function(name, listener) {
+    window.EducationCustomizations.createAction = function (name, listener) {
         const actionButton = document.createElement('button');
+        actionButton.type = 'button';
+        actionButton.className = 'action';
         actionButton.innerText = name;
         actionButton.addEventListener('click', listener);
-
-        const [menu] = document.getElementsByClassName('custom-education-adm-menu');
-        menu.appendChild(actionButton)
+        actionsContent.appendChild(actionButton);
     }
 })();
