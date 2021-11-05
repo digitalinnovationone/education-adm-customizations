@@ -77,4 +77,8 @@
         await window.navigator.clipboard.writeText(text);
     }
 
+    window.EducationCustomizations.open = function (url) {
+        window.open(url, '_blank').focus();
+    }
+
 })();

@@ -7,6 +7,11 @@
         return `https://web.dio.me/course/${slug}/learning/${uuid}`;
     }
 
+    window.EducationCustomizations.createAction('Abrir no DIO.ME', async () => {
+        const courseDioMeUrl = getCourseDioMeUrl();
+        window.EducationCustomizations.open(courseDioMeUrl);
+    });
+
     window.EducationCustomizations.createAction('Copiar Link DIO.ME', async () => {
         const courseDioMeUrl = getCourseDioMeUrl();
         await window.EducationCustomizations.copy(courseDioMeUrl);
