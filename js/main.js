@@ -11,9 +11,38 @@
     (function addMenu() {
         const menu = document.createElement('div');
         menu.className = 'custom-education-adm-menu';
+
+        const actionsContent = document.createElement('div');
+        actionsContent.className = 'actions';
+        
+        const closeButton = document.createElement('button');
+        closeButton.type = 'button';
+        closeButton.className = 'close';
+        closeButton.innerText = 'x';
+
+        closeButton.addEventListener('click', () => {
+            const [menu] = document.getElementsByClassName('custom-education-adm-menu');
+            menu.classList.toggle('open');
+        });
+
+        actionsContent.appendChild(closeButton);
+
+        menu.appendChild(actionsContent);
+
+        const floatingButton = document.createElement('button');
+        floatingButton.type = 'button';
+        floatingButton.className = 'custom-education-floating-adm-menu-button';
+        floatingButton.innerText = '+';
+        floatingButton.addEventListener('click', () => {
+            content.classList.toggle('open')
+        });
+
         const [body] = document.getElementsByTagName('body');
         body.appendChild(menu);
+        body.appendChild(floatingButton);
     })();
+
+    window.EducationCustomizations = {};
 
     window.EducationCustomizations.load = function (pageName) {
         const script = document.createElement('script');
