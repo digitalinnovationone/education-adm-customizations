@@ -1,4 +1,4 @@
-# Personamizações no Admin - Education
+# Personalizações no Admin - Education
 
 Para ativar as customizações deste respositório, basta realizar os seguintes passos:
 
