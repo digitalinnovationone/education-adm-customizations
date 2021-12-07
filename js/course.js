@@ -17,7 +17,7 @@
         await window.EducationCustomizations.copy(courseDioMeUrl);
     });
 
-    window.EducationCustomizations.createAction('Copiar CSV Base de Treinamentos', async () => {
+    window.EducationCustomizations.createAction('Copiar CSV', async () => {
         const [,,,,id] = window.location.pathname.split('/');
         const editorial = '';
         const name = document.querySelector('#id_name')?.value || '';
