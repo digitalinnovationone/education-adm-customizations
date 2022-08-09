@@ -17,19 +17,4 @@
         await window.EducationCustomizations.copy(courseDioMeUrl);
     });
 
-    window.EducationCustomizations.createAction('Copiar CSV', async () => {
-        const [,,,,id] = window.location.pathname.split('/');
-        const editorial = '';
-        const name = document.querySelector('#id_name')?.value || '';
-        const tecnology = document.querySelector('#id_coursehasskills_set-0-skill > option[selected]')?.innerText || '';
-        const duration = document.querySelector('#id_workload')?.value || '';
-        const author = document.querySelector('#id_author_on_deck > div > span.tag')?.innerText || '';
-        const gender = '';
-        const stack = '';
-        const linkDioMe = getCourseDioMeUrl();
-        const linkAdmin = window.location.href;
-        const courseCsv = `${id},${editorial},${name},${tecnology},${duration},${author},${gender},${stack},${linkDioMe},${linkAdmin}`;
-        await window.EducationCustomizations.copy(courseCsv);
-    });
-
 })();
