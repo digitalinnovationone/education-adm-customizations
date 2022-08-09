@@ -9,7 +9,7 @@
 
     const [body] = document.getElementsByTagName('body');
 
-    const menu = (() => {
+    const menuFab = (() => {
         const div = document.createElement('div');
         div.className = 'custom-education-adm-menu';
         return div;
@@ -22,33 +22,35 @@
         button.innerText = 'x';
 
         button.addEventListener('click', () => {
-            menu.classList.toggle('open');
+            menuFab.classList.toggle('open');
         });
 
         return button;
     })();
 
-    const actionsContent = (() => {
+    const actionsFab = (() => {
         const div = document.createElement('div');
         div.className = 'actions';
         div.appendChild(closeButton);
         return div;
     })();
 
-    const floatingButton = (() => {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'custom-education-floating-adm-menu-button';
-        button.innerText = '+';
-        button.addEventListener('click', () => {
-            menu.classList.toggle('open');
+    menuFab.appendChild(actionsFab);
+
+    const fab = (() => {
+        const floatingActionButton = document.createElement('button');
+        floatingActionButton.type = 'button';
+        floatingActionButton.className = 'custom-education-floating-adm-menu-button';
+        floatingActionButton.innerText = '+';
+        floatingActionButton.addEventListener('click', () => {
+            menuFab.classList.toggle('open');
         });
-        return button;
+        floatingActionButton.hidden = true;
+        return floatingActionButton;
     })();
 
-    menu.appendChild(actionsContent);
-    body.appendChild(menu);
-    body.appendChild(floatingButton);
+    body.appendChild(menuFab);
+    body.appendChild(fab);
 
     window.EducationCustomizations = {};
 
@@ -60,12 +62,13 @@
     };
 
     window.EducationCustomizations.createAction = function (name, listener) {
+        fab.hidden = false;
         const actionButton = document.createElement('button');
         actionButton.type = 'button';
         actionButton.className = 'action';
         actionButton.innerText = name;
         actionButton.addEventListener('click', listener);
-        actionsContent.appendChild(actionButton);
+        actionsFab.appendChild(actionButton);
     }
 
     window.EducationCustomizations.copy = async function (text) {
