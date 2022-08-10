@@ -39,6 +39,7 @@
 
     const fab = (() => {
         const floatingActionButton = document.createElement('button');
+        floatingActionButton.id = 'fabAdminCustomizations';
         floatingActionButton.type = 'button';
         floatingActionButton.className = 'custom-education-floating-adm-menu-button';
         floatingActionButton.innerText = '+';
