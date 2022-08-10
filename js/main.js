@@ -45,7 +45,6 @@
         floatingActionButton.addEventListener('click', () => {
             menuFab.classList.toggle('open');
         });
-        floatingActionButton.hidden = true;
         return floatingActionButton;
     })();
 
@@ -62,13 +61,12 @@
     };
 
     window.EducationCustomizations.createAction = function (name, listener) {
-        fab.hidden = false;
-        const actionButton = document.createElement('button');
-        actionButton.type = 'button';
-        actionButton.className = 'action';
-        actionButton.innerText = name;
-        actionButton.addEventListener('click', listener);
-        actionsFab.appendChild(actionButton);
+        const action = document.createElement('button');
+        action.type = 'button';
+        action.className = 'action';
+        action.innerText = name;
+        action.addEventListener('click', listener);
+        actionsFab.appendChild(action);
     }
 
     window.EducationCustomizations.copy = async function (text) {
