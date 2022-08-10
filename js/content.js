@@ -16,7 +16,7 @@
             if (link.target != '_blank') {
                 link.target = '_blank';
             }
-            if (link.style) {
+            if (!link.style.color) {
                 link.style = 'color: #3498db; text-decoration: underline;'
             }
         });
