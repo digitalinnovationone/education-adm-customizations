@@ -12,7 +12,7 @@
     }
 
     function normalizeLinks() {
-        document.querySelector('.cke_editable').querySelectorAll('a').forEach(link => {
+        document.querySelector("iframe.cke_wysiwyg_frame").contentDocument.querySelectorAll('a').forEach(link => {
             if(link.target || link.target != '_target') {
                 link.target = '_target';
             }
