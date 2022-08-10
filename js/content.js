@@ -2,7 +2,7 @@
     'use strict';
 
     const fab = document.getElementById('fabAdminCustomizations');
-    fab.hidden = true;
+    fab.style.display = 'none';
 
     const contentType = document.querySelector('.field-type > div > div')?.innerText || '';
     if (contentType == 'Texto') {
