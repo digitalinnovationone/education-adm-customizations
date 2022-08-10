@@ -7,7 +7,7 @@
     const contentType = document.querySelector('.field-type > div > div')?.innerText || '';
     if (contentType == 'Texto') {
         document.querySelectorAll('[type="submit"][value^="Salvar"').forEach(saveInput => {
-            saveInput.addEventListener('mousedown', () => normalizeLinks());
+            saveInput.addEventListener('mouseover', () => normalizeLinks());
         });
     }
 
