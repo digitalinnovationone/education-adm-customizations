@@ -2,7 +2,7 @@
     (function addStyle() {
         const custonStyle = document.createElement('link');
         custonStyle.rel = 'stylesheet';
-        custonStyle.href = 'https://falvojr.github.io/education-adm-customizations/css/styles.css';
+        custonStyle.href = 'https://digitalinnovationone.github.io/education-adm-customizations/css/styles.css';
         const [head] = document.getElementsByTagName('head');
         head.appendChild(custonStyle);
     })();
@@ -56,7 +56,7 @@
 
     window.EducationCustomizations.load = function (pageName) {
         const script = document.createElement('script');
-        script.src = `https://falvojr.github.io/education-adm-customizations/js/${pageName}.js`;
+        script.src = `https://digitalinnovationone.github.io/education-adm-customizations/js/${pageName}.js`;
         const [body] = document.getElementsByTagName('body');
         body.appendChild(script);
     };
