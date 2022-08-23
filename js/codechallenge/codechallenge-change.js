@@ -11,6 +11,8 @@
         return `https://web.dio.me/coding/${slug}/algorithm/${algorithm}`;
     }
 
+    window.EducationCustomizations.createFloatingActionButton();
+
     window.EducationCustomizations.createAction('Abrir no DIO.ME', async () => {
         const courseDioMeUrl = getCourseDioMeUrl();
         window.EducationCustomizations.open(courseDioMeUrl);

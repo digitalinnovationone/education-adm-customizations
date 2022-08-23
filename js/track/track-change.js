@@ -6,6 +6,8 @@
         return `https://web.dio.me/track/${slug}`;
     }
 
+    window.EducationCustomizations.createFloatingActionButton();
+
     window.EducationCustomizations.createAction('Abrir no DIO.ME', async () => {
         const courseDioMeUrl = getCourseDioMeUrl();
         window.EducationCustomizations.open(courseDioMeUrl);

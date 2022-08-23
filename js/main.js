@@ -7,51 +7,6 @@
         head.appendChild(custonStyle);
     })();
 
-    const [body] = document.getElementsByTagName('body');
-
-    const menuFab = (() => {
-        const div = document.createElement('div');
-        div.className = 'custom-education-adm-menu';
-        return div;
-    })();
-
-    const closeButton = (() => {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'close';
-        button.innerText = 'x';
-
-        button.addEventListener('click', () => {
-            menuFab.classList.toggle('open');
-        });
-
-        return button;
-    })();
-
-    const actionsFab = (() => {
-        const div = document.createElement('div');
-        div.className = 'actions';
-        div.appendChild(closeButton);
-        return div;
-    })();
-
-    menuFab.appendChild(actionsFab);
-
-    const fab = (() => {
-        const floatingActionButton = document.createElement('button');
-        floatingActionButton.id = 'fabAdminCustomizations';
-        floatingActionButton.type = 'button';
-        floatingActionButton.className = 'custom-education-floating-adm-menu-button';
-        floatingActionButton.innerText = '+';
-        floatingActionButton.addEventListener('click', () => {
-            menuFab.classList.toggle('open');
-        });
-        return floatingActionButton;
-    })();
-
-    body.appendChild(menuFab);
-    body.appendChild(fab);
-
     window.EducationCustomizations = {};
 
     window.EducationCustomizations.load = function (scriptPath) {
@@ -64,6 +19,52 @@
         newBreadCrumb.innerHTML = '{ <a href="https://github.com/digitalinnovationone/education-adm-customizations" target="_blank">education-adm-customizations</a> ativo }';
         document.querySelector('#container > div.breadcrumbs').appendChild(newBreadCrumb);
     };
+
+    window.EducationCustomizations.createFloatingActionButton = function () {
+        const menuFab = (() => {
+            const div = document.createElement('div');
+            div.className = 'custom-education-adm-menu';
+            return div;
+        })();
+
+        const closeButton = (() => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'close';
+            button.innerText = 'x';
+
+            button.addEventListener('click', () => {
+                menuFab.classList.toggle('open');
+            });
+
+            return button;
+        })();
+
+        const actionsFab = (() => {
+            const div = document.createElement('div');
+            div.className = 'actions';
+            div.appendChild(closeButton);
+            return div;
+        })();
+
+        menuFab.appendChild(actionsFab);
+
+        const fab = (() => {
+            const floatingActionButton = document.createElement('button');
+            floatingActionButton.id = 'fabAdminCustomizations';
+            floatingActionButton.type = 'button';
+            floatingActionButton.className = 'custom-education-floating-adm-menu-button';
+            floatingActionButton.innerText = '+';
+            floatingActionButton.addEventListener('click', () => {
+                menuFab.classList.toggle('open');
+            });
+            return floatingActionButton;
+        })();
+
+        const [body] = document.getElementsByTagName('body');
+        body.appendChild(menuFab);
+        body.appendChild(fab);
+    }
 
     window.EducationCustomizations.createAction = function (name, listener) {
         const action = document.createElement('button');
