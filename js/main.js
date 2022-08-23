@@ -90,4 +90,10 @@
         window.open(url, '_blank').focus();
     }
 
+    window.EducationCustomizations.storageKeys = {
+        content: {
+            lastOpenedId: 'education-adm-customizations.content.lastOpenedId'
+        }
+    };
+
 })();

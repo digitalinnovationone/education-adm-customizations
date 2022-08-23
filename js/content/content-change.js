@@ -1,5 +1,3 @@
-import { storageKeys } from '../constants.js';
-
 (function () {
     'use strict';
 
@@ -14,6 +12,8 @@ import { storageKeys } from '../constants.js';
     if (contentType == 'Questionário') {
         const url = window.location.pathname;
         const contentId = url.substring(url.lastIndexOf('/content/') + 9, url.lastIndexOf('/change/'));
+
+        const storageKeys = window.EducationCustomizations.storageKeys;
         window.localStorage.setItem(storageKeys.content.lastOpenedId, contentId);
     }
 
