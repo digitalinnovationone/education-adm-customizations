@@ -3,7 +3,7 @@
 Para ativar as customizações deste respositório, basta realizar os seguintes passos:
 
 1. Instalar a extensão [Tampermonkey](https://www.tampermonkey.net/) em seu Google Chrome;
-2. Baixar o arquivo [tampermonkey-backup-chrome-2022-08-23T14-33-12-517Z.zip](https://github.com/digitalinnovationone/education-adm-customizations/blob/main/tampermonkey-backup-chrome-2022-08-23T14-33-12-517Z.zip?raw=true);
+2. Baixar o arquivo [tampermonkey-backup-chrome-2022-08-23T18-39-21-813Z.zip](https://github.com/digitalinnovationone/education-adm-customizations/blob/main/tampermonkey-backup-chrome-2022-08-23T18-39-21-813Z.zip?raw=true);
 3. Importar o arquivo no Tampermonkey com a seguintes ações:
     - Entrar no "Painel de opções" (clicando no ícone da extensão do Chrome);
     - Ir a aba "Utilitários";
