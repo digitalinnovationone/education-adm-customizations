@@ -54,11 +54,15 @@
 
     window.EducationCustomizations = {};
 
-    window.EducationCustomizations.load = function (pageName) {
+    window.EducationCustomizations.load = function (scriptPath) {
         const script = document.createElement('script');
-        script.src = `https://digitalinnovationone.github.io/education-adm-customizations/js/${pageName}.js`;
+        script.src = `https://digitalinnovationone.github.io/education-adm-customizations/js/${scriptPath}`;
         const [body] = document.getElementsByTagName('body');
         body.appendChild(script);
+
+        const newBreadCrumb = document.createElement('small');
+        newBreadCrumb.innerHTML = '{ <a href="https://github.com/digitalinnovationone/education-adm-customizations" target="_blank">education-adm-customizations</a> ativo }';
+        document.querySelector('#container > div.breadcrumbs').appendChild(newBreadCrumb);
     };
 
     window.EducationCustomizations.createAction = function (name, listener) {
