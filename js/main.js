@@ -40,18 +40,18 @@
             return button;
         })();
 
-        const actionsFab = (() => {
+        const fabActions = (() => {
             const div = document.createElement('div');
+            div.id = 'fabActions';
             div.className = 'actions';
             div.appendChild(closeButton);
             return div;
         })();
 
-        menuFab.appendChild(actionsFab);
+        menuFab.appendChild(fabActions);
 
         const fab = (() => {
             const floatingActionButton = document.createElement('button');
-            floatingActionButton.id = 'fabAdminCustomizations';
             floatingActionButton.type = 'button';
             floatingActionButton.className = 'custom-education-floating-adm-menu-button';
             floatingActionButton.innerText = '+';
@@ -72,7 +72,9 @@
         action.className = 'action';
         action.innerText = name;
         action.addEventListener('click', listener);
-        actionsFab.appendChild(action);
+
+        const fabActions = document.getElementById('fabActions');
+        fabActions.appendChild(action);
     }
 
     window.EducationCustomizations.copy = async function (text) {
