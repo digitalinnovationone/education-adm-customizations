@@ -11,15 +11,11 @@
         window.EducationCustomizations.createFloatingActionButton();
 
         window.EducationCustomizations.createAction('Template de Lab', async () => {
-            const tenplate = await fetch('https://digitalinnovationone.github.io/education-adm-customizations/js/content/templates/15297.html');
-            const tenplateText = await tenplate.text();
-            document.querySelector("iframe.cke_wysiwyg_frame").contentDocument.querySelector('body').innerHTML = tenplateText;
+            await applyTextContentTemplate(15297);
         });
 
         window.EducationCustomizations.createAction('Template de Curso', async () => {
-            const tenplate = await fetch('https://digitalinnovationone.github.io/education-adm-customizations/js/content/templates/15395.html');
-            const tenplateText = await tenplate.text();
-            document.querySelector("iframe.cke_wysiwyg_frame").contentDocument.querySelector('body').innerHTML = tenplateText;
+            await applyTextContentTemplate(15395);
         });
     }
 
@@ -40,5 +36,11 @@
                 link.style = 'color: #3498db; text-decoration: underline;'
             }
         });
+    }
+
+    async function applyTextContentTemplate(contentId) {
+        const tenplate = await fetch(`https://digitalinnovationone.github.io/education-adm-customizations/js/content/templates/${contentId}.html`);
+        const tenplateText = await tenplate.text();
+        document.querySelector("iframe.cke_wysiwyg_frame").contentDocument.querySelector('body').innerHTML = tenplateText;
     }
 })();
