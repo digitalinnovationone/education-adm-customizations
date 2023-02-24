@@ -93,6 +93,13 @@
     window.EducationCustomizations.storageKeys = {
         content: {
             lastOpenedId: 'education-adm-customizations.content.lastOpenedId'
+        },
+        course: {
+            lastOpenedId: 'education-adm-customizations.course.lastOpenedId',
+            lastOpenedLevel: 'education-adm-customizations.course.lastOpenedLevel'
+        },
+        quiz: {
+            lastOpenedId: 'education-adm-customizations.quiz.lastOpenedId'
         }
     };
 
