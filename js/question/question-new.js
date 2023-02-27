@@ -13,7 +13,7 @@
         // Verifica se o "Ctrl + V" foi acionado.
         if (key == 86 && ctrl) {
             const clipboardText = await navigator.clipboard.readText();
-            const questionFragments = clipboardText.split('[/t]');
+            const questionFragments = clipboardText.split('[\t]');
 
             document.getElementById('id_description').innerHTML = questionFragments[0];
 
