@@ -15,12 +15,12 @@
             const clipboardText = await navigator.clipboard.readText();
             const questionFragments = clipboardText.split('\\t');
 
-            document.getElementById('id_description').innerHTML = questionFragments[0];
+            document.getElementById('id_description').value = questionFragments[0];
 
             const alternatives = document.querySelectorAll('textarea[name^="question_choice-"]');
             let alternativeIndex = 1;
             for (const alternative of alternatives) {
-                alternative.innerHTML = questionFragments[alternativeIndex++];
+                alternative.value = questionFragments[alternativeIndex++];
             }
         }
 
