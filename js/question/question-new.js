@@ -13,14 +13,18 @@
         // Verifica se o "Ctrl + V" foi acionado.
         if (key == 86 && ctrl) {
             const clipboardText = await navigator.clipboard.readText();
-            const questionFragments = clipboardText.split('\\t');
+            let questionFragments = clipboardText.split('\t');
+            if (questionFragments.length == 1) {
+                questionFragments = clipboardText.split('\\t');
+            }
 
-            document.getElementById('id_description').value = questionFragments[0];
-
-            const alternatives = document.querySelectorAll('textarea[name^="question_choice-"]');
-            let alternativeIndex = 1;
-            for (const alternative of alternatives) {
-                alternative.value = questionFragments[alternativeIndex++];
+            if (questionFragments.length > 1) {
+                document.getElementById('id_description').value = questionFragments[0];
+                const alternatives = document.querySelectorAll('textarea[name^="question_choice-"]:not([name="question_choice-__prefix__-description"])');
+                let alternativeIndex = 1;
+                for (const alternative of alternatives) {
+                    alternative.value = questionFragments[alternativeIndex++];
+                }
             }
         }
 
