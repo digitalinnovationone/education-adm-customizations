@@ -5,6 +5,12 @@
     const alternativaPadrao = document.querySelector('input[name="question_choice-0-correct"]');
     alternativaPadrao.click();
 
+    if (navigator.clipboard) {
+        configMagicCtrlV();
+    }
+})();
+
+function configMagicCtrlV() {
     document.body.addEventListener("keydown", async function (ev) {
         ev = ev || window.event;
         const key = ev.which || ev.keyCode;
@@ -18,15 +24,17 @@
                 questionFragments = clipboardText.split('\\t');
             }
 
-            if (questionFragments.length > 1) {
-                document.getElementById('id_description').value = questionFragments[0];
+            if (questionFragments.length > 2) {
+                document.getElementById('id_description').value = questionFragments[0].trim();
                 const alternatives = document.querySelectorAll('textarea[name^="question_choice-"]:not([name="question_choice-__prefix__-description"])');
                 let alternativeIndex = 1;
                 for (const alternative of alternatives) {
-                    alternative.value = questionFragments[alternativeIndex++];
+                    if (questionFragments[alternativeIndex]) {
+                        alternative.value = questionFragments[alternativeIndex++].trim();
+                    }
                 }
             }
         }
 
     }, false);
-})();
+}
