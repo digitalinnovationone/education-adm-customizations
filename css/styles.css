@@ -72,6 +72,6 @@
 }
 
 input[type="text"], textarea {
-    width: 60%;
+    min-width: 60%;
     box-sizing: border-box;
 }
