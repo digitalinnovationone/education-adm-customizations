@@ -70,3 +70,8 @@
     cursor: pointer;
     text-decoration: underline;
 }
+
+input[type="text"], textarea {
+    width: 90%;
+    box-sizing: border-box;
+}
